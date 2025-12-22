@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  background: #111;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 140px 0 80px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.product {
+  padding: 100px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-img {
+  display: none;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 28px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background: #111;
+}
+
+.price {
+  font-size: 1.8rem;
+  margin: 16px 0;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.specs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.specs td {
+  border-bottom: 1px solid #eee;
+  padding: 14px 0;
+}
+
+.contact {
+  padding: 80px 0;
+  text-align: center;
+}
+
+footer {
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
