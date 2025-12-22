@@ -397,3 +397,32 @@ html, body{
 html, body{
   overflow-x: hidden;
 }
+/* Mobile (portrait) nav overflow fix */
+@media (max-width: 480px){
+  .nav-inner{
+    height: auto;              /* allow header to grow */
+    padding: 10px 0;
+    flex-wrap: wrap;           /* allow links to wrap */
+    gap: 10px;
+  }
+
+  .nav-links{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;           /* wrap to next line */
+    justify-content: center;   /* keep centered */
+    gap: 8px;
+  }
+
+  .nav-links a{
+    margin-left: 0;            /* remove desktop spacing */
+    padding: 8px 10px;         /* smaller pills */
+    font-size: 0.95rem;        /* slightly smaller text */
+    font-weight: 800;          /* keep thick */
+    border-radius: 999px;
+  }
+}
+
+/* Safety: prevent horizontal scrolling */
+html, body{ overflow-x: hidden; }
+
