@@ -265,3 +265,15 @@ footer {
 .button:active {
   text-decoration: none;
 }
+.carousel {
+  border: 1px solid #e6e6e6;   /* very light gray */
+  border-radius: 16px;        /* matches existing rounding */
+  padding: 16px;              /* creates breathing room inside */
+  background: #ffffff;
+}
+
+/* Thin light-gray border for hero "View Paddle" image */
+.hero-image img {
+  border: 1px solid #e6e6e6;   /* same light gray */
+  border-radius: 16px;
+}
