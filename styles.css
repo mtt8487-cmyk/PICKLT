@@ -277,3 +277,105 @@ footer {
   border: 1px solid #e6e6e6;   /* same light gray */
   border-radius: 16px;
 }
+/* Prevent horizontal overflow / nav leaking */
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Make header/nav wrap cleanly on small screens */
+.nav-inner{
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.nav-links{
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Ensure nav pills never push outside */
+.nav-links a{
+  white-space: nowrap;
+}
+
+/* Mobile layout: stack nav and center it */
+@media (max-width: 768px){
+  .nav-inner{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hero + Product grids stack properly */
+  .hero-grid,
+  .product-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Images scale correctly */
+  .hero-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Carousel container and images scale correctly */
+  .carousel{
+    width: 100%;
+  }
+
+  .carousel-img{
+    width: 100%;
+    height: auto;
+    display: none;
+    object-fit: contain;
+  }
+
+  .carousel-img.active{
+    display: block;
+  }
+
+  /* Keep arrows inside the bordered carousel */
+  .carousel-btn{
+    top: 50%;
+  }
+
+  .carousel-btn.left{
+    left: 8px;
+  }
+
+  .carousel-btn.right{
+    right: 8px;
+  }
+
+  /* Make feature cards stack cleanly */
+  .feature-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Keep table readable */
+  .specs table{
+    width: 100%;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px){
+  .nav-links a{
+    padding: 9px 12px;
+    font-size: 0.98rem;
+  }
+
+  .carousel{
+    padding: 12px; /* slightly tighter */
+  }
+}
