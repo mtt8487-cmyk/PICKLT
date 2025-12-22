@@ -190,3 +190,47 @@ footer {
   border-top: 1px solid #eee;
 }
 
+.nav-links a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  background: #ffffff;
+
+  font-size: 1.05rem;   /* larger */
+  font-weight: 800;     /* thicker */
+  letter-spacing: 0.01em;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+
+/* Float animation on hover */
+.nav-links a:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  border-color: #d6d6d6;
+  background-color: #fafafa;
+}
+
+/* Optional: subtle "press" feel */
+.nav-links a:active{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+/* Keep spacing between pills consistent */
+.nav-links{
+  gap: 14px;
+}
+
+/* Mobile: keep pills readable */
+@media (max-width: 768px){
+  .nav-links a{
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+}
