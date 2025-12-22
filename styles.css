@@ -379,3 +379,21 @@ html, body{
     padding: 12px; /* slightly tighter */
   }
 }
+@media (max-width: 768px){
+  .nav-inner{
+    flex-wrap: wrap;          /* allows items to move to next line */
+    gap: 10px;
+  }
+
+  .nav-links{
+    flex-wrap: wrap;          /* allows pills to wrap */
+    justify-content: center;  /* centers them */
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+/* Safety: prevent any horizontal scroll caused by nav */
+html, body{
+  overflow-x: hidden;
+}
