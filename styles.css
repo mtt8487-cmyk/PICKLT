@@ -1,0 +1,213 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray-light: #f5f5f5;
+  --gray-dark: #333;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.logo-mark {
+  background: var(--black);
+  color: var(--white);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 140px 0 80px;
+  text-align: center;
+  background: var(--gray-light);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #eee;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--black);
+  border-radius: 50%;
+}
+
+.paddle-showcase {
+  padding: 80px 0;
+}
+
+.paddle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.paddle-image {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 3/4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.product-title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: var(--white);
+  font-weight: 800;
+  z-index: 10;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+.paddle-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: var(--black);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.paddle-details {
+  text-align: center;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.old-price {
+  text-decoration: line-through;
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #eee;
+  border-radius: 999px;
+  margin: 8px;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+.specs, .about, .contact {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.specs-table {
+  margin: 30px auto 0;
+  border-collapse: collapse;
+}
+
+.specs-table th,
+.specs-table td {
+  border: 1px solid #ddd;
+  padding: 14px 20px;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 0;
+}
