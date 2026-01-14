@@ -150,7 +150,6 @@ body {
 }
 
 .price .old {
-  text-decoration: line-through;
   color: #999;
   margin-right: 10px;
 }
@@ -425,4 +424,5 @@ html, body{
 
 /* Safety: prevent horizontal scrolling */
 html, body{ overflow-x: hidden; }
+
 
