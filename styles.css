@@ -420,3 +420,40 @@ html, body { max-width: 100%; overflow-x: hidden; }
     opacity: 1 !important;
   }
 }
+@media (max-width: 768px){
+
+  /* Black bar on mobile */
+  .nav{ background:#000; border-bottom:none; }
+
+  /* Logo text always visible */
+  .logo,
+  .logo:visited,
+  .logo:hover,
+  .logo:active,
+  .logo:focus{
+    color:#fff !important;
+    text-decoration:none !important;
+  }
+
+  /* Logo image: visible on black + not blurry */
+  .logo-img{
+    height: 44px;
+    width: auto;
+    transform: none !important;     /* removes blur */
+    margin: 0 !important;
+    filter: brightness(0) invert(1) !important; /* makes dark logo white */
+  }
+
+  /* Mobile pills: visible */
+  .nav-links a{
+    background:#fff !important;
+    color:#000 !important;
+    border-color:#e0e0e0 !important;
+  }
+
+  .nav-links a:hover{
+    background:#f5f5f5 !important;
+    color:#000 !important;
+    opacity:1 !important;
+  }
+}
