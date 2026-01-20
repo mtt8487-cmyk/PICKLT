@@ -26,16 +26,20 @@ body {
   height: 64px;
 }
 
-/* Logo block */
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 0;                 /* we'll control spacing precisely below */
+}
 
-/* FIX: new logo image sizing (add class="logo-img" on your <img>) */
+/* 3× logo without breaking layout */
 .logo-img{
-  height: 32px;                 /* keeps layout stable */
+  height: 32px;
   width: auto;
   display: block;
-  transform: scale(3);          /* visually 3× larger */
+  transform: scale(3);
   transform-origin: left center;
+  margin-right: 52px;     /* prevents overlap with the PICKLT text */
 }
 
 /* Old logo mark (safe to keep if still used anywhere) */
@@ -275,6 +279,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; }
 }
+
 
 
 
