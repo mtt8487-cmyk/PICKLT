@@ -273,13 +273,8 @@ html, body { max-width: 100%; overflow-x: hidden; }
   display: block;
 }
 
-.logo-mark{
-  width: 32px;
-  height: 32px;
-  background: #111;
-  color: #fff;
-  display: grid;
-  place-items: center;
-  border-radius: 6px;
+.nav-inner{
+  flex-wrap: nowrap;
 }
+
 
