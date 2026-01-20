@@ -19,19 +19,16 @@ body {
 
 .nav-inner{
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 64px;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  gap: 48px;              /* controls distance between logo + nav */
 }
-
 .nav-links{
-  display: flex;              /* THIS is the key missing piece */
+  display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 14px;
 }
+
 
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
 
@@ -289,6 +286,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .nav .container{
   max-width: 800px;   /* try 980–1100 to taste */
 }
+
 
 
 
