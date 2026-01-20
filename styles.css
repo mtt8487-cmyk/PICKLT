@@ -286,6 +286,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
   flex-wrap: nowrap;
 }
 
+.nav .container{
+  max-width: 800px;   /* try 980–1100 to taste */
+}
 
 
 
