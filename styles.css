@@ -17,15 +17,26 @@ body {
   z-index: 1000;
 }
 
+/* FIX: keep logo + nav on the same baseline and closer together */
 .nav-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center;     /* vertical alignment */
+  justify-content: flex-start; /* do not push nav to far right */
+  gap: 48px;               /* controls spacing between logo and nav */
   height: 64px;
 }
 
+/* Logo block */
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
 
+/* FIX: new logo image sizing (add class="logo-img" on your <img>) */
+.logo-img{
+  height: 32px;            /* correct size for a 64px header */
+  width: auto;
+  display: block;
+}
+
+/* Old logo mark (safe to keep if still used anywhere) */
 .logo-mark {
   width: 32px;
   height: 32px;
@@ -34,6 +45,13 @@ body {
   display: grid;
   place-items: center;
   border-radius: 6px;
+}
+
+/* FIX: ensure nav links sit in a row and align with logo */
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 /* Navigation buttons — black, rounded, floating */
@@ -45,9 +63,9 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 999px;
   background: #ffffff;
-  color: #000000; /* FORCE black text */
-  font-size: 1.05rem; /* larger */
-  font-weight: 800; /* thicker */
+  color: #000000;
+  font-size: 1.05rem;
+  font-weight: 800;
   letter-spacing: 0.01em;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease,
@@ -69,9 +87,6 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.10);
   color: #000000;
 }
-
-/* Space between nav pills */
-.nav-links{ gap: 14px; }
 
 /* Remove all nav underlines (normal + hover + focus) */
 .nav-links a,
@@ -124,9 +139,9 @@ body {
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid #e6e6e6; /* very light gray */
-  border-radius: 16px;       /* matches existing rounding */
-  padding: 16px;             /* creates breathing room inside */
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 16px;
   background: #ffffff;
 }
 
@@ -192,9 +207,8 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* Mobile responsiveness */
 @media (max-width: 768px){
-  /* Make header/nav wrap cleanly on small screens */
   .nav-inner{
-    height: auto;           /* allow header to grow */
+    height: auto;
     padding: 10px 0;
     flex-wrap: wrap;
     gap: 10px;
@@ -204,33 +218,30 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
   .nav-links{
     width: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
   }
 
-  /* Mobile: keep pills readable */
   .nav-links a{
-    margin-left: 0;     /* remove desktop spacing */
+    margin-left: 0;
     font-size: 1rem;
     padding: 10px 14px;
     white-space: nowrap;
   }
 
-  /* Hero + Product grids stack properly */
   .hero-grid, .product-grid{
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  /* Images scale correctly */
   .hero-image img{
     width: 100%;
     height: auto;
     display: block;
   }
 
-  /* Carousel container and images scale correctly */
   .carousel{ width: 100%; }
   .carousel-img{
     width: 100%;
@@ -240,15 +251,11 @@ html, body { max-width: 100%; overflow-x: hidden; }
   }
   .carousel-img.active{ display: block; }
 
-  /* Keep arrows inside the bordered carousel */
   .carousel-btn{ top: 50%; }
   .carousel-btn.left{ left: 8px; }
   .carousel-btn.right{ right: 8px; }
 
-  /* Make feature cards stack cleanly */
   .feature-grid{ grid-template-columns: 1fr; gap: 18px; }
-
-  /* Keep table readable */
   .specs table{ width: 100%; }
 }
 
@@ -264,5 +271,5 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 @media (max-width: 420px){
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
-  .carousel{ padding: 12px; /* slightly tighter */ }
+  .carousel{ padding: 12px; }
 }
