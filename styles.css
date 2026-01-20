@@ -7,7 +7,7 @@ body {
   line-height: 1.6;
 }
 
-.container { max-width: 900px; margin: auto; padding: 0 24px; }
+.container { max-width: 1200px; margin: auto; padding: 0 24px; }
 
 .nav {
   position: fixed;
@@ -17,18 +17,12 @@ body {
   z-index: 1000;
 }
 
-.nav-inner{
+.nav-inner {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 64px;
-  gap: 48px;              /* controls distance between logo + nav */
 }
-.nav-links{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
 
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
 
@@ -272,63 +266,3 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; /* slightly tighter */ }
 }
-
-.logo-img{
-  height: 128px;       /* matches old logo size */
-  width: auto;
-  display: block;
-}
-
-.nav-inner{
-  flex-wrap: nowrap;
-}
-
-.nav .container{
-  max-width: 800px;   /* try 980–1100 to taste */
-}
-
-/* ===== NAV LAYOUT FIX ===== */
-
-/* Keep logo + nav side-by-side */
-.nav-inner{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* prevents nav from dropping */
-  gap: 28px;                   /* spacing between logo and nav */
-  height: 64px;
-  flex-wrap: nowrap;
-}
-
-/* Nav sits beside logo, not pushed to edge */
-.nav-links{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-left: 12px;           /* slight offset from logo */
-  flex: 0 0 auto;
-}
-
-/* If a CTA exists, push ONLY it to the far right */
-.nav-cta{
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-/* Do NOT squeeze the header too much */
-.nav .container{
-  max-width: 1100px;           /* prevents wrapping under logo */
-}
-
-/* Logo image stays aligned */
-.logo{
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-
-
-
-
-
