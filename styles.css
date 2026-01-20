@@ -266,3 +266,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; /* slightly tighter */ }
 }
+
+.logo-img{
+  height: 32px;       /* matches old logo size */
+  width: auto;
+  display: block;
+}
