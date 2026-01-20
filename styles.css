@@ -17,37 +17,36 @@ body {
   z-index: 1000;
 }
 
-/* FIX: keep logo + nav on the same baseline and closer together */
-.nav-inner {
+/* Desktop header layout: logo + nav grouped and aligned */
+.nav-inner{
   display: flex;
-  align-items: center;     /* vertical alignment */
-  justify-content: flex-start; /* do not push nav to far right */
-  gap: 48px;               /* controls spacing between logo and nav */
+  align-items: center;
+  justify-content: flex-start;  /* keeps nav closer to logo */
+  gap: 64px;                   /* logo <-> nav spacing */
   height: 64px;
 }
 
+/* Logo (image + PICKLT text) */
 .logo{
   display: flex;
   align-items: center;
-  gap: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  font-weight: 800;          /* matches nav bar */
-  font-size: 1.05rem;        /* matches nav text size */
-  letter-spacing: 0.01em;    /* matches nav spacing */
+  font-weight: 800;            /* match nav weight */
+  font-size: 1.05rem;          /* match nav presence */
+  letter-spacing: 0.02em;      /* similar to athletic brand feel */
 }
 
-/* 3× logo without breaking layout */
+/* New logo image: large without breaking layout */
 .logo-img{
-  height: 32px;
+  height: 32px;                /* keep header layout stable */
   width: auto;
   display: block;
-  transform: scale(3);
+  transform: scale(3);         /* ~3x larger visually */
   transform-origin: left center;
-  margin-right: 52px;     /* prevents overlap with the PICKLT text */
+  margin-right: 52px;          /* prevents overlap with PICKLT text */
 }
 
-/* Old logo mark (safe to keep if still used anywhere) */
-.logo-mark {
+/* If old logo mark still exists anywhere, keep it safe */
+.logo-mark{
   width: 32px;
   height: 32px;
   background: #111;
@@ -57,56 +56,45 @@ body {
   border-radius: 6px;
 }
 
-/* FIX: ensure nav links sit in a row and align with logo */
+/* Nav container */
 .nav-links{
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 32px;                   /* spacing between nav items */
 }
 
-/* Navigation buttons — black, rounded, floating */
+/* Selkirk-style desktop nav links: inline text, no pills */
 .nav-links a{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #000000;
-  font-size: 1.05rem;
+
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+
+  color: #111;
+  font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.01em;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease,
-              background-color 200ms ease, color 200ms ease;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+
+  transition: opacity 200ms ease, color 200ms ease;
 }
 
-/* Hover: float up, still black */
 .nav-links a:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-  border-color: #cfcfcf;
-  background-color: #fafafa;
-  color: #000000;
+  opacity: 0.7;
+  color: #000;
+  transform: none;
 }
 
-/* Active / pressed */
 .nav-links a:active{
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-  color: #000000;
+  opacity: 0.55;
 }
 
-/* Remove all nav underlines (normal + hover + focus) */
-.nav-links a,
-.nav-links a:hover,
-.nav-links a:focus,
-.nav-links a:active { text-decoration: none; }
-
-/* If you had a pseudo-underline, disable it */
-.nav-links a::after { display: none; content: none; }
-
+/* Hero */
 .hero { padding: 140px 0 80px; }
 
 .hero-grid {
@@ -116,13 +104,13 @@ body {
   align-items: center;
 }
 
-/* Thin light-gray border for hero "View Paddle" image */
 .hero-image img {
   width: 100%;
   border-radius: 16px;
   border: 1px solid #e6e6e6;
 }
 
+/* Buttons */
 .button {
   display: inline-block;
   margin-top: 20px;
@@ -131,10 +119,12 @@ body {
   color: #fff;
   border-radius: 10px;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.button, .button:hover, .button:focus, .button:active { text-decoration: none; }
+.button:hover, .button:focus, .button:active { text-decoration: none; }
 
+/* Product */
 .product { padding: 100px 0; }
 
 .product-grid {
@@ -143,7 +133,8 @@ body {
   gap: 60px;
 }
 
-.carousel {
+/* Carousel */
+.carousel{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -155,7 +146,7 @@ body {
   background: #ffffff;
 }
 
-.carousel-img {
+.carousel-img{
   display: none;
   width: 75%;
   max-width: 420px;
@@ -163,9 +154,9 @@ body {
   border-radius: 16px;
 }
 
-.carousel-img.active { display: block; }
+.carousel-img.active{ display: block; }
 
-.carousel-btn {
+.carousel-btn{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -181,7 +172,7 @@ body {
 
 .carousel-dots { text-align: center; margin-top: 10px; }
 
-.carousel-dots .dot {
+.carousel-dots .dot{
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -191,32 +182,53 @@ body {
   cursor: pointer;
 }
 
-.carousel-dots .dot.active { background: #111; }
+.carousel-dots .dot.active{ background: #111; }
 
+/* Price */
 .price { font-size: 1.8rem; margin: 16px 0; }
 .price .old { color: #000; margin-right: 10px; }
 
-.feature-grid {
+/* Features */
+.feature-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin-top: 40px;
 }
 
-.feature-card { border: 1px solid #eee; padding: 30px; border-radius: 16px; }
+.feature-card{
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 16px;
+}
 
-.specs table { width: 100%; border-collapse: collapse; margin-top: 30px; }
-.specs td { border-bottom: 1px solid #eee; padding: 14px 0; }
+/* Specs */
+.specs table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
 
+.specs td{
+  border-bottom: 1px solid #eee;
+  padding: 14px 0;
+}
+
+/* Contact + Footer */
 .contact { padding: 80px 0; text-align: center; }
 
-footer { padding: 30px; text-align: center; border-top: 1px solid #eee; }
+footer{
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
 
-/* Prevent horizontal overflow / nav leaking */
+/* Prevent horizontal overflow */
 html, body { max-width: 100%; overflow-x: hidden; }
 
-/* Mobile responsiveness */
+/* ===== MOBILE: keep your original pill-style nav ===== */
 @media (max-width: 768px){
+
   .nav-inner{
     height: auto;
     padding: 10px 0;
@@ -234,12 +246,43 @@ html, body { max-width: 100%; overflow-x: hidden; }
     gap: 10px;
   }
 
+  /* Mobile nav pills */
   .nav-links a{
-    margin-left: 0;
-    font-size: 1rem;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
     padding: 10px 14px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #000000;
+
+    text-decoration: none;
     white-space: nowrap;
+
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease,
+                background-color 200ms ease, color 200ms ease;
   }
+
+  .nav-links a:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    border-color: #cfcfcf;
+    background-color: #fafafa;
+    color: #000000;
+    opacity: 1;
+  }
+
+  .nav-links a:active{
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    color: #000000;
+  }
+
+  .nav-links a::after{ display: none; content: none; }
 
   .hero-grid, .product-grid{
     grid-template-columns: 1fr;
@@ -283,9 +326,3 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; }
 }
-
-
-
-
-
-
