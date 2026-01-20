@@ -40,7 +40,7 @@ body {
   height: 32px;                /* keep header layout stable */
   width: auto;
   display: block;
-  /* ~3x larger visually */
+  transform: scale(3);         /* ~3x larger visually */
   transform-origin: left center;
   margin-right: 52px;          /* prevents overlap with PICKLT text */
 }
@@ -326,4 +326,3 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; }
 }
-
