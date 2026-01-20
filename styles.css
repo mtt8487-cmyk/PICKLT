@@ -21,8 +21,9 @@ body {
 .nav-inner{
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* keeps nav closer to logo */
-  gap: 64px;                   /* logo <-> nav spacing */
+  justify-content: flex-start;
+  flex-wrap: nowrap;            /* KEY: prevents nav dropping to next line */
+  gap: 64px;
   height: 64px;
 }
 
@@ -30,19 +31,20 @@ body {
 .logo{
   display: flex;
   align-items: center;
-  font-weight: 800;            /* match nav weight */
-  font-size: 1.05rem;          /* match nav presence */
-  letter-spacing: 0.02em;      /* similar to athletic brand feel */
+  flex: 0 0 auto;               /* KEY: logo keeps its width, doesn't force wrap */
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
 }
 
 /* New logo image: large without breaking layout */
 .logo-img{
-  height: 32px;                /* keep header layout stable */
+  height: 32px;
   width: auto;
   display: block;
-  transform: scale(3);         /* ~3x larger visually */
+  transform: scale(3);
   transform-origin: left center;
-  margin-right: 52px;          /* prevents overlap with PICKLT text */
+  margin-right: 52px;
 }
 
 /* If old logo mark still exists anywhere, keep it safe */
@@ -60,7 +62,11 @@ body {
 .nav-links{
   display: flex;
   align-items: center;
-  gap: 32px;                   /* spacing between nav items */
+  flex: 0 1 auto;               /* KEY: allow nav to size naturally */
+  width: auto;                  /* KEY: prevents it taking full row */
+  gap: 32px;
+  margin: 0;                    /* KEY: ensures no default margin pushes it down */
+  padding: 0;                   /* KEY: ensures no default padding pushes it down */
 }
 
 /* Selkirk-style desktop nav links: inline text, no pills */
@@ -92,6 +98,18 @@ body {
 
 .nav-links a:active{
   opacity: 0.55;
+}
+
+/* ===== FORCE desktop row layout (overrides any accidental stacking) ===== */
+@media (min-width: 769px){
+  .nav-inner{
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  .nav-links{
+    justify-content: flex-start !important;
+  }
 }
 
 /* Hero */
