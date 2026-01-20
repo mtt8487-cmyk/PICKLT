@@ -29,7 +29,11 @@ body {
 .logo{
   display: flex;
   align-items: center;
-  gap: 0;                 /* we'll control spacing precisely below */
+  gap: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;          /* matches nav bar */
+  font-size: 1.05rem;        /* matches nav text size */
+  letter-spacing: 0.01em;    /* matches nav spacing */
 }
 
 /* 3× logo without breaking layout */
@@ -279,6 +283,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; }
 }
+
 
 
 
