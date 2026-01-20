@@ -287,6 +287,45 @@ html, body { max-width: 100%; overflow-x: hidden; }
   max-width: 800px;   /* try 980–1100 to taste */
 }
 
+/* ===== NAV LAYOUT FIX ===== */
+
+/* Keep logo + nav side-by-side */
+.nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* prevents nav from dropping */
+  gap: 28px;                   /* spacing between logo and nav */
+  height: 64px;
+  flex-wrap: nowrap;
+}
+
+/* Nav sits beside logo, not pushed to edge */
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 12px;           /* slight offset from logo */
+  flex: 0 0 auto;
+}
+
+/* If a CTA exists, push ONLY it to the far right */
+.nav-cta{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Do NOT squeeze the header too much */
+.nav .container{
+  max-width: 1100px;           /* prevents wrapping under logo */
+}
+
+/* Logo image stays aligned */
+.logo{
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
 
 
 
