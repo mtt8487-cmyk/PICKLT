@@ -381,3 +381,42 @@ html, body { max-width: 100%; overflow-x: hidden; }
   opacity: 0.7;
   color: #fff;
 }
+/* ===== MOBILE FIXES for black navbar ===== */
+@media (max-width: 768px){
+
+  /* keep header black on mobile too */
+  .nav{ background:#000; border-bottom:none; }
+
+  /* ensure the logo text stays visible */
+  .logo,
+  .logo:visited,
+  .logo:hover,
+  .logo:active,
+  .logo:focus{
+    color:#fff;
+    text-decoration:none;
+  }
+
+  /* FIX: blurry logo on mobile (transforms cause blur) */
+  .logo-img{
+    height: 44px;                /* adjust 40–52 if needed */
+    width: auto;
+    transform: none !important;  /* remove scaling blur */
+    margin: 0 !important;
+    image-rendering: auto;
+    filter: none;                /* remove invert on small screens */
+  }
+
+  /* FIX: nav pills visible on black background */
+  .nav-links a{
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #e0e0e0 !important;
+  }
+
+  .nav-links a:hover{
+    background: #f5f5f5 !important;
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+}
