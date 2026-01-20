@@ -17,11 +17,20 @@ body {
   z-index: 1000;
 }
 
-.nav-inner {
+.nav-inner{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.nav-links{
+  display: flex;              /* THIS is the key missing piece */
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
 }
 
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
@@ -276,6 +285,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .nav-inner{
   flex-wrap: nowrap;
 }
+
 
 
 
