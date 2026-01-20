@@ -277,7 +277,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 }
 
 .logo-img{
-  height: 128px;       /* matches old logo size */
+  height: 32px;       /* matches old logo size */
   width: auto;
   display: block;
 }
@@ -285,6 +285,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .nav-inner{
   flex-wrap: nowrap;
 }
+
 
 
 
