@@ -1,1 +1,268 @@
-* { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #111; background: #ffffff; line-height: 1.6; } .container { max-width: 1200px; margin: auto; padding: 0 24px; } .nav { position: fixed; width: 100%; background: #fff; border-bottom: 1px solid #eee; z-index: 1000; } .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 64px; } .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; } .logo-mark { width: 32px; height: 32px; background: #111; color: #fff; display: grid; place-items: center; border-radius: 6px; } .nav-links a { margin-left: 24px; font-weight: 600; } .hero { padding: 140px 0 80px; } .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; } .hero-image img { width: 100%; border-radius: 16px; } .button { display: inline-block; margin-top: 20px; padding: 14px 30px; background: #111; color: #fff; border-radius: 10px; font-weight: 700; } .product { padding: 100px 0; } .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; } .carousel { position: relative; } .carousel-img { display: none; width: 75%; max-width: 420px; margin: 0 auto; border-radius: 16px; } .carousel { display: flex; flex-direction: column; align-items: center; } .carousel-img.active { display: block; } .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #fff; border: 1px solid #ddd; font-size: 28px; padding: 6px 14px; cursor: pointer; } .carousel-btn.left { left: 10px; } .carousel-btn.right { right: 10px; } .carousel-dots { text-align: center; margin-top: 10px; } .carousel-dots .dot { display: inline-block; width: 10px; height: 10px; background: #ccc; border-radius: 50%; margin: 0 5px; cursor: pointer; } .carousel-dots .dot.active { background: #111; } .price { font-size: 1.8rem; margin: 16px 0; } .price .old { color: #000; margin-right: 10px; } .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; } .feature-card { border: 1px solid #eee; padding: 30px; border-radius: 16px; } .specs table { width: 100%; border-collapse: collapse; margin-top: 30px; } .specs td { border-bottom: 1px solid #eee; padding: 14px 0; } .contact { padding: 80px 0; text-align: center; } footer { padding: 30px; text-align: center; border-top: 1px solid #eee; } /* Navigation buttons — black, rounded, floating */ .nav-links a{ display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid #e0e0e0; border-radius: 999px; background: #ffffff; color: #000000; /* FORCE black text */ font-size: 1.05rem; /* larger */ font-weight: 800; /* thicker */ letter-spacing: 0.01em; box-shadow: 0 6px 18px rgba(0,0,0,0.06); transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease, color 200ms ease; } /* Hover: float up, still black */ .nav-links a:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); border-color: #cfcfcf; background-color: #fafafa; color: #000000; /* stay black */ } /* Active / pressed */ .nav-links a:active{ transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.10); color: #000000; } /* Space between nav pills */ .nav-links{ gap: 14px; } /* Mobile: keep pills readable */ @media (max-width: 768px){ .nav-links a{ font-size: 1rem; padding: 10px 14px; } } /* Remove all nav underlines (normal + hover + focus) */ .nav-links a, .nav-links a:hover, .nav-links a:focus, .nav-links a:active { text-decoration: none; } /* If you had a pseudo-underline, disable it */ .nav-links a::after { display: none; content: none; } .button, .button:hover, .button:focus, .button:active { text-decoration: none; } .carousel { border: 1px solid #e6e6e6; /* very light gray */ border-radius: 16px; /* matches existing rounding */ padding: 16px; /* creates breathing room inside */ background: #ffffff; } /* Thin light-gray border for hero "View Paddle" image */ .hero-image img { border: 1px solid #e6e6e6; /* same light gray */ border-radius: 16px; } /* Prevent horizontal overflow / nav leaking */ html, body{ max-width: 100%; overflow-x: hidden; } /* Make header/nav wrap cleanly on small screens */ .nav-inner{ flex-wrap: wrap; gap: 10px; padding: 10px 0; } .nav-links{ flex-wrap: wrap; justify-content: flex-end; gap: 10px; } /* Ensure nav pills never push outside */ .nav-links a{ white-space: nowrap; } /* Mobile layout: stack nav and center it */ @media (max-width: 768px){ .nav-inner{ flex-direction: column; align-items: center; } .nav-links{ width: 100%; justify-content: center; } /* Hero + Product grids stack properly */ .hero-grid, .product-grid{ grid-template-columns: 1fr; gap: 28px; } /* Images scale correctly */ .hero-image img{ width: 100%; height: auto; display: block; } /* Carousel container and images scale correctly */ .carousel{ width: 100%; } .carousel-img{ width: 100%; height: auto; display: none; object-fit: contain; } .carousel-img.active{ display: block; } /* Keep arrows inside the bordered carousel */ .carousel-btn{ top: 50%; } .carousel-btn.left{ left: 8px; } .carousel-btn.right{ right: 8px; } /* Make feature cards stack cleanly */ .feature-grid{ grid-template-columns: 1fr; gap: 18px; } /* Keep table readable */ .specs table{ width: 100%; } } /* Extra small phones */ @media (max-width: 420px){ .nav-links a{ padding: 9px 12px; font-size: 0.98rem; } .carousel{ padding: 12px; /* slightly tighter */ } } @media (max-width: 768px){ .nav-inner{ flex-wrap: wrap; /* allows items to move to next line */ gap: 10px; } .nav-links{ flex-wrap: wrap; /* allows pills to wrap */ justify-content: center; /* centers them */ width: 100%; gap: 10px; } } /* Safety: prevent any horizontal scroll caused by nav */ html, body{ overflow-x: hidden; } /* Mobile (portrait) nav overflow fix */ @media (max-width: 480px){ .nav-inner{ height: auto; /* allow header to grow */ padding: 10px 0; flex-wrap: wrap; /* allow links to wrap */ gap: 10px; } .nav-links{ width: 100%; display: flex; flex-wrap: wrap; /* wrap to next line */ justify-content: center; /* keep centered */ gap: 8px; } .nav-links a{ margin-left: 0; /* remove desktop spacing */ padding: 8px 10px; /* smaller pills */ font-size: 0.95rem; /* slightly smaller text */ font-weight: 800; /* keep thick */ border-radius: 999px; } } /* Safety: prevent horizontal scrolling */ html, body{ overflow-x: hidden; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: auto; padding: 0 24px; }
+
+.nav {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  background: #111;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+}
+
+/* Navigation buttons — black, rounded, floating */
+.nav-links a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000; /* FORCE black text */
+  font-size: 1.05rem; /* larger */
+  font-weight: 800; /* thicker */
+  letter-spacing: 0.01em;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease,
+              background-color 200ms ease, color 200ms ease;
+}
+
+/* Hover: float up, still black */
+.nav-links a:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  border-color: #cfcfcf;
+  background-color: #fafafa;
+  color: #000000;
+}
+
+/* Active / pressed */
+.nav-links a:active{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+  color: #000000;
+}
+
+/* Space between nav pills */
+.nav-links{ gap: 14px; }
+
+/* Remove all nav underlines (normal + hover + focus) */
+.nav-links a,
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active { text-decoration: none; }
+
+/* If you had a pseudo-underline, disable it */
+.nav-links a::after { display: none; content: none; }
+
+.hero { padding: 140px 0 80px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Thin light-gray border for hero "View Paddle" image */
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #e6e6e6;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.button, .button:hover, .button:focus, .button:active { text-decoration: none; }
+
+.product { padding: 100px 0; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #e6e6e6; /* very light gray */
+  border-radius: 16px;       /* matches existing rounding */
+  padding: 16px;             /* creates breathing room inside */
+  background: #ffffff;
+}
+
+.carousel-img {
+  display: none;
+  width: 75%;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+.carousel-img.active { display: block; }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 28px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+
+.carousel-dots { text-align: center; margin-top: 10px; }
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active { background: #111; }
+
+.price { font-size: 1.8rem; margin: 16px 0; }
+.price .old { color: #000; margin-right: 10px; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature-card { border: 1px solid #eee; padding: 30px; border-radius: 16px; }
+
+.specs table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+.specs td { border-bottom: 1px solid #eee; padding: 14px 0; }
+
+.contact { padding: 80px 0; text-align: center; }
+
+footer { padding: 30px; text-align: center; border-top: 1px solid #eee; }
+
+/* Prevent horizontal overflow / nav leaking */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Mobile responsiveness */
+@media (max-width: 768px){
+  /* Make header/nav wrap cleanly on small screens */
+  .nav-inner{
+    height: auto;           /* allow header to grow */
+    padding: 10px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Mobile: keep pills readable */
+  .nav-links a{
+    margin-left: 0;     /* remove desktop spacing */
+    font-size: 1rem;
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+
+  /* Hero + Product grids stack properly */
+  .hero-grid, .product-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Images scale correctly */
+  .hero-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Carousel container and images scale correctly */
+  .carousel{ width: 100%; }
+  .carousel-img{
+    width: 100%;
+    height: auto;
+    display: none;
+    object-fit: contain;
+  }
+  .carousel-img.active{ display: block; }
+
+  /* Keep arrows inside the bordered carousel */
+  .carousel-btn{ top: 50%; }
+  .carousel-btn.left{ left: 8px; }
+  .carousel-btn.right{ right: 8px; }
+
+  /* Make feature cards stack cleanly */
+  .feature-grid{ grid-template-columns: 1fr; gap: 18px; }
+
+  /* Keep table readable */
+  .specs table{ width: 100%; }
+}
+
+/* Extra small phones */
+@media (max-width: 480px){
+  .nav-links a{
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 999px;
+  }
+}
+
+@media (max-width: 420px){
+  .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
+  .carousel{ padding: 12px; /* slightly tighter */ }
+}
