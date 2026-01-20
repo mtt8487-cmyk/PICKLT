@@ -31,7 +31,7 @@ body {
 
 /* FIX: new logo image sizing (add class="logo-img" on your <img>) */
 .logo-img{
-  height: 90px;            /* correct size for a 64px header */
+  height: 50px;            /* correct size for a 64px header */
   width: auto;
   display: block;
 }
@@ -273,5 +273,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-links a{ padding: 9px 12px; font-size: 0.98rem; }
   .carousel{ padding: 12px; }
 }
+
 
 
