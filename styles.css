@@ -15,6 +15,14 @@ h1, h2, h3, h4,
     font-family: 'Montserrat', sans-serif;
 }
 
+.logo span {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.nav-links a {
+    font-weight: 600;
+}
 .container { max-width: 1200px; margin: auto; padding: 0 24px; }
 
 .nav {
@@ -465,4 +473,5 @@ html, body { max-width: 100%; overflow-x: hidden; }
     opacity:1 !important;
   }
 }
+
 
