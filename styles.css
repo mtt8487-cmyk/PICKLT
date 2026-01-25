@@ -474,9 +474,14 @@ html, body { max-width: 100%; overflow-x: hidden; }
   }
 }
 
+.product-info .price {
+  font-size: 1.05rem;
+  margin: 12px 0;
+}
 
-.paddle-details .price {
-  font-size: 1.35rem; /* was 1.5rem */
+.product-info .price .old {
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 
