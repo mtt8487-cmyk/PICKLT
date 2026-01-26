@@ -490,5 +490,8 @@ html, body { max-width: 100%; overflow-x: hidden; }
 }
 
 
+.specs h2 {
+  margin-bottom: 32px;
+}
 
 
